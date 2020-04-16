@@ -8,47 +8,47 @@ public class AutoHuur {
     }
 
     public void setAantalDagen(int aD) {
-        aantalDagen = aD;
+        this.aantalDagen = aD;
     }
 
     public int getAantalDagen() {
-        return aantalDagen;
+        return this.aantalDagen;
     }
 
     public void setGehuurdeAuto(Auto gA) {
-        auto = gA;
+        this.auto = gA;
     }
 
     public Auto getGehuurdeAuto() {
-        return auto;
+        return this.auto;
     }
 
     public void setHuurder(Klant k) {
-        klant = k;
+        this.klant = k;
     }
 
     public Klant getHuurder() {
-        return klant;
+        return this.klant;
     }
 
     public double totaalPrijs() {
-        double korting = klant.kortingspercentage / 100;
-        totaalprijs = auto.prijsPerdag * aantalDagen * (1-korting);
-        return totaalprijs;
+        double korting = this.klant.kortingspercentage / 100;
+        this.totaalprijs = this.auto.prijsPerdag * this.aantalDagen * (1-korting);
+        return this.totaalprijs;
     }
 
     public String toString() {
         if(klant != null && auto != null && aantalDagen > 0)  {
             return
-              "\nautotype: "+auto.type+" met prijs per dag: "+auto.prijsPerdag+
-              "\nop de naam van: "+klant.naam+" ("+klant.kortingspercentage+")"+
-              "\naantal dagen: "+aantalDagen+" en dat kost: "+totaalPrijs();
+              "\nautotype: "+this.auto.type+" met prijs per dag: "+this.auto.prijsPerdag+
+              "\nop de naam van: "+this.klant.naam+" ("+this.klant.kortingspercentage+")"+
+              "\naantal dagen: "+this.aantalDagen+" en dat kost: "+totaalPrijs();
         }
         else {
             return
             "\ner is geen auto bekend"+
             "\ner is geen huurder bekend"+
-            "\naantal dagen:"+aantalDagen+" en dat kost: "+totaalprijs;
+            "\naantal dagen:"+this.aantalDagen+" en dat kost: "+this.totaalprijs;
         }
     }
 }
