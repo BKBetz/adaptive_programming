@@ -33,7 +33,7 @@ public class AutoHuur {
 
     public double totaalPrijs() {
         double korting = klant.kortingspercentage / 100;
-        totaalprijs = 5.5;
+        totaalprijs = auto.prijsPerdag * aantalDagen * (1-korting);
         return totaalprijs;
     }
 
@@ -42,8 +42,7 @@ public class AutoHuur {
             return
               "\nautotype: "+auto.type+" met prijs per dag: "+auto.prijsPerdag+
               "\nop de naam van: "+klant.naam+" ("+klant.kortingspercentage+")"+
-              "\naantal dagen: "+aantalDagen+" en dat kost: "+totaalprijs;
-
+              "\naantal dagen: "+aantalDagen+" en dat kost: "+totaalPrijs();
         }
         else {
             return
