@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/autohuur/autohuur.iml" filepath="$PROJECT_DIR$/autohuur/autohuur.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/formatieve_opdracht_1a.iml" filepath="$PROJECT_DIR$/.idea/formatieve_opdracht_1a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gameshop/gameshop.iml" filepath="$PROJECT_DIR$/gameshop/gameshop.iml" />
     </modules>
   </component>
 </project>

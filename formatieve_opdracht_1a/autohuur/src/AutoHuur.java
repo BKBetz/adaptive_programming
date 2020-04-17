@@ -38,17 +38,32 @@ public class AutoHuur {
     }
 
     public String toString() {
+
         if(klant != null && auto != null && aantalDagen > 0)  {
             return
               "\nautotype: "+this.auto.type+" met prijs per dag: "+this.auto.prijsPerdag+
               "\nop de naam van: "+this.klant.naam+" ("+this.klant.kortingspercentage+")"+
-              "\naantal dagen: "+this.aantalDagen+" en dat kost: "+totaalPrijs();
+              "\naantal dagen: "+this.aantalDagen+" en dat kost: "+totaalPrijs()+"\n";
         }
         else {
-            return
-            "\ner is geen auto bekend"+
-            "\ner is geen huurder bekend"+
-            "\naantal dagen:"+this.aantalDagen+" en dat kost: "+this.totaalprijs;
+            if(klant != null && auto == null) {
+                 return
+                    "\ner is geen auto bekend"+
+                    "\nop de naam van: "+this.klant.naam+" ("+this.klant.kortingspercentage+")"+
+                    "\naantal dagen:"+this.aantalDagen+" en dat kost: "+this.totaalprijs+"\n";
+            }
+            else if(klant == null && auto == null) {
+                return
+                    "\ner is geen auto bekend" +
+                    "\ner is geen huurder bekend" +
+                    "\naantal dagen:" + this.aantalDagen + " en dat kost: " + this.totaalprijs+"\n";
+            }
+            else {
+                return
+                    "\ner is geen auto bekend" +
+                    "\ner is geen huurder bekend" +
+                    "\naantal dagen:" + this.aantalDagen + " en dat kost: " + this.totaalprijs+"\n";
+            }
         }
     }
 }
