@@ -20,6 +20,25 @@ public class TicketStation implements Machine{
 
     @Override
     public void machineBreakDown() {
+        switch(this.condition) {
+            case "optimal":
+                this.condition = "good";
+                break;
+            case "good":
+                this.condition = "bad";
+                break;
+            case "bad":
+                this.condition = "broken";
+                break;
+        }
+    }
 
+    @Override
+    public String toString() {
+        String formattedString = String.format(
+                "\n Station:%s  ports:%s \n condition:%s \n",
+                this.stationCode, this.ports, this.condition
+        );
+        return formattedString;
     }
 }
