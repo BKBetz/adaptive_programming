@@ -30,7 +30,7 @@ public class Arcade {
         return this.games;
     }
 
-    public void setPrices(Price pC) {
+    public void setPrices(Prize pC) {
         prices.add(pC);
     }
 
@@ -73,10 +73,10 @@ public class Arcade {
         String formattedStations = formatList(this.ticketStations);
         String formattedEmployees = formatList(this.employees);
         String arcade = String.format("Welcome to %s in %s", this.name, this.location);
-        String games= String.format("Current games and status: \n %s", ((this.games.isEmpty()) ? "None" : formattedGames));
-        String prices = String.format("Available prices: \n %s", ((this.prices.isEmpty()) ? "None" : formattedPrices));
-        String ticketStations = String.format("All ticketstations and status: \n %s", ((this.ticketStations.isEmpty()) ? "None" : formattedStations));
-        String employees = String.format("All employees and role: \n %s", ((this.employees.isEmpty()) ? "None" : formattedEmployees));
+        String games= String.format("Current games and status: \n %s", ((this.games.isEmpty()) ? "None \n" : formattedGames));
+        String prices = String.format("Available prices: \n %s", ((this.prices.isEmpty()) ? "None \n" : formattedPrices));
+        String ticketStations = String.format("All ticketstations and status: \n %s", ((this.ticketStations.isEmpty()) ? "None \n" : formattedStations));
+        String employees = String.format("All employees and role: \n %s", ((this.employees.isEmpty()) ? "None \n" : formattedEmployees));
 
         return
                 arcade +'\n' +

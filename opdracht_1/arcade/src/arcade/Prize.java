@@ -1,11 +1,11 @@
 package arcade;
 
-public class Price {
+public class Prize {
     private String name;
     private int price;
     private String type;
 
-    public Price(String nm, int pC, String tP) {
+    public Prize(String nm, int pC, String tP) {
         this.name = nm;
         this.price = pC;
         this.type = tP;
@@ -14,6 +14,14 @@ public class Price {
     public void setName(String nm) {this.name = nm;}
 
     public String getName() {return this.name;}
+
+    public void setPrice(int pC) {
+        this.price = pC;
+    }
+
+    public int getPrice() {
+        return this.price;
+    }
 
     @Override
     public String toString() {

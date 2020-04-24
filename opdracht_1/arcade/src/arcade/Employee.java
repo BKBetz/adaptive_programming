@@ -23,7 +23,7 @@ public class Employee {
 
     public String fixMachine(Game gM, TicketStation tS ) {
         if(this.role == "mechanic") {
-            String condition = "";
+            int condition = 0;
             if (gM != null && tS == null) {
                  condition = gM.getCondition();
             } else {
@@ -31,10 +31,31 @@ public class Employee {
             }
 
             switch(condition) {
-                case "optimal":
-                    condition = "optimal";
+                case 10:
+                    condition = 10;
+                    break;
+                case 9:
+                    condition = 10;
+                    break;
+                case 8:
+                    condition = 10;
+                    break;
+                case 7:
+                    condition = 10;
+                    break;
+                case 6:
+                    condition = 7;
+                    break;
+                case 5:
+                    condition = 7;
+                    break;
+                case 4:
+                    condition = 7;
+                    break;
+
                 default:
-                    condition = "good";
+                    condition = 6;
+                    break;
             }
 
             if (gM != null && tS == null) {
