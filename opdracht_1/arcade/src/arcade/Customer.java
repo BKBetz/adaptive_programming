@@ -9,6 +9,8 @@ public class Customer {
 
     /* some rules
     *  - A person can only have one pass at a time
+    *  - 2 People can have the same pass... they can share it for example.
+    *    it is a pass with only a code it is not connected to a customer by name
     * */
 
     public Customer(String nm, double cN) {

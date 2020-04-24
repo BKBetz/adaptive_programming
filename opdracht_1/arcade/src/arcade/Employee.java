@@ -9,10 +9,6 @@ public class Employee {
         this.role = rL;
     }
 
-    public void setName(String nm) {this.name = nm;}
-
-    public String getName() {return this.name;}
-
     public void setEmployeeRole(String rL){
         this.role = rL;
     }

@@ -11,10 +11,6 @@ public class Prize {
         this.type = tP;
     }
 
-    public void setName(String nm) {this.name = nm;}
-
-    public String getName() {return this.name;}
-
     public void setPrice(int pC) {
         this.price = pC;
     }
