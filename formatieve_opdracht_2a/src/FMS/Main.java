@@ -49,7 +49,7 @@ public class Main {
                 }
             }
 
-            System.out.println(path);
+            System.out.println("The path it takes starting from s0 is: " + path);
         }
         else {
             System.out.println("String contains more than just A & B");
