@@ -9,26 +9,27 @@ public class Main {
         Node e = new Node("E");
         Node f = new Node("F");
 
+        a.setConnection(new Treinrit(10, b));
+        a.setConnection(new Treinrit(15, c));
+        b.setConnection(new Treinrit(12, d));
+        b.setConnection(new Treinrit(15, f));
+        c.setConnection(new Treinrit(10, e));
+        d.setConnection(new Treinrit(1, f));
+        d.setConnection(new Treinrit(2, e));
+        f.setConnection(new Treinrit(5, e));
+
         Graph g1 = new Graph();
 
-        a.setConnection(new Treinrit(80, b));
-        a.setConnection(new Treinrit(20, c));
-        b.setConnection(new Treinrit(20, d));
-        b.setConnection(new Treinrit(30, f));
-        c.setConnection(new Treinrit(15, e));
-        d.setConnection(new Treinrit(25, f));
-        d.setConnection(new Treinrit(40, e));
-        f.setConnection(new Treinrit(15, e));
+        g1.addNode(a);
+        g1.addNode(b);
+        g1.addNode(c);
+        g1.addNode(d);
+        g1.addNode(e);
+        g1.addNode(f);
+        g1.calculateShortestPathFromSource(g1, a);
 
 
-
-        g1.addRoute(a);
-        g1.addRoute(b);
-        g1.addRoute(c);
-        g1.addRoute(d);
-        g1.addRoute(e);
-        g1.addRoute(f);
-
-        System.out.println(g1.toString());
+        Reis r = new Reis(e, e.getShortestPath());
+        r.createRoute();
     }
 }

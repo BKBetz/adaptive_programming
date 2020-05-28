@@ -1,33 +1,47 @@
 package DSP;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Node {
     private String name;
-    private HashMap<Node, Integer> connections = new HashMap<Node, Integer>();
-    private int value;
+    private HashMap<Node, Integer> connections = new HashMap<>();
+    private Integer value = Integer.MAX_VALUE;
+    private String type;
+    private List<Node> shortestPath = new LinkedList<>();
 
     public Node(String nm) {
         name = nm;
     }
 
     public void setConnection(Stap r) {
+        setType(r.getClass());
         Node n = r.returnEndNode();
-        value = r.returnValue();
+        Integer v = r.returnValue();
 
-        connections.put(n, value);
+        connections.put(n, v);
     }
 
-    public HashMap getConnection() {
+    public HashMap<Node, Integer> getConnection() {
         return connections;
     }
 
-    public String getName() {
-        return name;
+    public void setType(Class r) {
+        String r_string = r.getSimpleName();
+        this.type = r_string;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getType() {
+        return type;
+    }
+
+    public void setShortestPath(List<Node> shortestPath) {
+        this.shortestPath = shortestPath;
+    }
+
+    public List<Node> getShortestPath() {
+        return shortestPath;
     }
 
     public void setValue(int value) {
@@ -40,9 +54,6 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Node{" +
-                "name='" + name + '\'' +
-                ", connections=" + connections +
-                '}';
+        return name;
     }
 }
