@@ -4,7 +4,7 @@ public class Vlucht extends Stap{
     private int value;
     private Node endNode;
 
-    public Vlucht(int val, Node en, boolean bg) {
+    public Vlucht(int val, Node en) {
         value = val;
         endNode = en;
     }

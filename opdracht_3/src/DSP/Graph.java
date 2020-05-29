@@ -17,6 +17,10 @@ public class Graph {
         nodes.add(nd);
     }
 
+    public Set<Node> getNodes() {
+        return nodes;
+    }
+
     private static Node getLowestDistanceNode(Set <Node> un) {
         // kijkt alle nodes in unsettled en pakt de node met de laagste value
         Node lowestDistanceNode = null;

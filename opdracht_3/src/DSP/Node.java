@@ -10,12 +10,23 @@ public class Node {
     private Integer value = Integer.MAX_VALUE;
     private String type;
     private List<Node> shortestPath = new LinkedList<>();
+    private boolean bagage;
 
-    public Node(String nm) {
+    public Node(String nm, boolean bg) {
         name = nm;
+        bagage = bg;
+    }
+
+    public void setBagage(boolean bagage) {
+        this.bagage = bagage;
+    }
+
+    public boolean getBagage() {
+        return bagage;
     }
 
     public void setConnection(Stap r) {
+        // type will be used to determine the kind of trip
         setType(r.getClass());
         Node n = r.returnEndNode();
         Integer v = r.returnValue();
@@ -28,6 +39,7 @@ public class Node {
     }
 
     public void setType(Class r) {
+        // get the kind of class and change it into a string
         String r_string = r.getSimpleName();
         this.type = r_string;
     }
